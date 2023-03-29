@@ -104,7 +104,7 @@ const SignIn = ({ user, setUser }) => {
               </p>
             </div>
 
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <section className="mt-8 grid grid-cols-6 gap-6">
               <div className="col-span-4">
                 <label
                   htmlFor="Email"
@@ -177,7 +177,7 @@ const SignIn = ({ user, setUser }) => {
                   .
                 </p>
               </div>
-            </form>
+            </section>
           </div>
         </main>
       </div>

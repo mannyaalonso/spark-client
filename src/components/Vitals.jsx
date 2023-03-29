@@ -1,6 +1,4 @@
-import { Input, Checkbox } from "../components"
-import { useState, useEffect } from "react"
-import { virtues, vitals } from "../data"
+import Input from "./Input"
 
 const Vitals = () => {
   return (

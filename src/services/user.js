@@ -1,14 +1,13 @@
 import Client from "./api"
 import axios from "axios"
 
-export const createUser = async (firstName, lastName, email, password) => {
+export const createUser = async (email, password) => {
   try {
     const { data } = await axios.post(
       "http://127.0.0.1:8888/signup",
       {
         email: email,
         password: password,
-        vitals: { first_name: firstName, last_name: lastName },
       },
       {
         headers: {
@@ -47,8 +46,8 @@ export const loginUser = async (email, password) => {
 
 export const updateUser = async (body, id) => {
   try {
-    const { data } = await Client.put(`/users/${id.$oid}`, body)
-    return data
+    const res = await Client.put(`/users/${id.$oid}`, body)
+    return res
   } catch (e) {
     return e.response.data.message
   }

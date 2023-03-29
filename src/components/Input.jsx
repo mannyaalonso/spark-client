@@ -1,15 +1,25 @@
 import { useState } from "react"
 
-const Input = ({ title, field, visibility, variables, setBody, body }) => {
+const Input = ({
+  title,
+  field,
+  visibility,
+  variables,
+  setStatus,
+  setBody,
+  body,
+}) => {
   const [checked, setChecked] = useState(visibility)
   const [input, setInput] = useState(field)
 
   const textChange = (e) => {
+    setStatus("")
     setInput(e.target.value)
     setBody({ ...body, [variables[0]]: e.target.value })
   }
 
   const checkChange = () => {
+    setStatus("")
     setChecked(!checked)
     setBody({ ...body, [variables[1]]: !checked })
   }

@@ -7,8 +7,6 @@ import { Home } from "./index"
 const SignUp = ({ user }) => {
 
   const initialState = {
-    firstName: '',
-    lastName: '', 
     email: '',
     password: '',
     passwordConfirm: ''
@@ -26,20 +24,15 @@ const SignUp = ({ user }) => {
   const handleSignup = async () => {
     
     if (
-      formState.firstName &&
-      formState.lastName &&
       formState.email &&
       formState.password &&
       formState.passwordConfirm
     ) {
       if (formState.password === formState.passwordConfirm) {
         const res = await createUser(
-          formState.firstName,
-          formState.lastName,
           formState.email,
           formState.password
         )
-        console.log(res)
         setResponse(res)
         if (res.message === "User created") {
           navigate("/signin")
@@ -123,43 +116,7 @@ const SignUp = ({ user }) => {
               </p>
             </div>
 
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="FirstName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  First Name
-                </label>
-
-                <input
-                  type="text"
-                  id="FirstName"
-                  name="firstName"
-                  value={formState.firstName}
-                  onChange={handleChange}
-                  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                />
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="LastName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Last Name
-                </label>
-
-                <input
-                  type="text"
-                  id="LastName"
-                  name="lastName"
-                  value={formState.lastName}
-                  onChange={handleChange}
-                  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                />
-              </div>
-
+            <section className="mt-8 grid grid-cols-6 gap-6">
               <div className="col-span-6">
                 <label
                   htmlFor="Email"
@@ -247,7 +204,7 @@ const SignUp = ({ user }) => {
                   .
                 </p>
               </div>
-            </form>
+            </section>
           </div>
         </main>
       </div>
