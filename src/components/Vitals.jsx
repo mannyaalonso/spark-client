@@ -1,6 +1,7 @@
 import Input from "./Input"
 import { updateUser } from "../services"
 import { useState } from "react"
+import Location from "./Location"
 
 const Vitals = ({ user, setUser }) => {
   const initialState = {
@@ -8,11 +9,15 @@ const Vitals = ({ user, setUser }) => {
     name_visibility: user?.vitals?.name_visibility,
     age: user?.vitals?.age,
     age_visibility: user?.vitals?.age_visibility,
-    location: user?.vitals?.location,
-    location_visibility: user?.vitals?.location_visibility,
+  }
+
+  const initialLocation = {
+    location: user?.location,
+    location_visibility: user?.location_visibility,
   }
 
   const [body, setBody] = useState(initialState)
+  const [location, setLocation] = useState(initialLocation)
   const [status, setStatus] = useState("")
 
   const handleUpdate = async () => {
@@ -26,16 +31,19 @@ const Vitals = ({ user, setUser }) => {
   }
 
   const checkUndefined = () => {
-    if (body.first_name === undefined) body.first_name = user?.vitals?.first_name
+    if (body.first_name === undefined)
+      body.first_name = user?.vitals?.first_name
     if (body.name_visibility === undefined)
       body.name_visibility = user?.vitals?.name_visibility
     if (body.age === undefined) body.age = user?.vitals?.age
     if (body.age_visibility === undefined)
       body.age_visibility = user?.vitals?.age_visibility
-    if (body.location === undefined) body.location = user?.vitals?.location
-    if (body.location_visibility === undefined)
-      body.location_visibility = user?.vitals?.location_visibility
+    if (initialLocation.location === undefined) initialLocation.location = user?.location
+    if (initialLocation.location_visibility === undefined)
+      initialLocation.location_visibility = user?.location_visibility
   }
+
+  console.log("BODY", user)
 
   return (
     user && (
@@ -73,7 +81,7 @@ const Vitals = ({ user, setUser }) => {
                   setBody={setBody}
                   body={body}
                 />
-                <Input
+                <Location
                   title={"Location"}
                   field={user?.vitals?.location}
                   visibility={user?.vitals?.location_visibility}

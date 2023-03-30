@@ -29,13 +29,17 @@ const Vices = ({ user, setUser }) => {
 
   const checkUndefined = () => {
     if (body.drinking === undefined) body.drinking = user?.vices?.drinking
-    if (body.drinking_visibility === undefined) body.drinking_visibility = user?.vices?.drinking_visibility
+    if (body.drinking_visibility === undefined)
+      body.drinking_visibility = user?.vices?.drinking_visibility
     if (body.smoking === undefined) body.smoking = user?.vices?.smoking
-    if (body.smoking_visibility === undefined) body.smoking_visibility = user?.vices?.smoking_visibility
+    if (body.smoking_visibility === undefined)
+      body.smoking_visibility = user?.vices?.smoking_visibility
     if (body.marijuana === undefined) body.marijuana = user?.vices?.marijuana
-    if (body.marijuana_visibility === undefined) body.marijuana_visibility = user?.vices?.marijuana_visibility
+    if (body.marijuana_visibility === undefined)
+      body.marijuana_visibility = user?.vices?.marijuana_visibility
     if (body.drugs === undefined) body.drugs = user?.vices?.drugs
-    if (body.drugs_visibility === undefined) body.drugs_visibility = user?.vices?.drugs_visibility
+    if (body.drugs_visibility === undefined)
+      body.drugs_visibility = user?.vices?.drugs_visibility
   }
 
   return (
