@@ -9,6 +9,11 @@ const Nav = ({ user }) => {
     {id: 3, name: "Profile", link: "/"},
     {id: 4, name: "Preferences", link: "/preferences"},
   ]
+
+  const handleLogout = () => {
+
+  }
+  
   return (
     <header aria-label="Site Header" className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -46,21 +51,12 @@ const Nav = ({ user }) => {
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-                <Link
+                <button
                   className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="/signin"
+                  onClick={handleLogout}
                 >
-                  Sign in
-                </Link>
-
-                <div className="hidden sm:flex">
-                  <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                    href="/signup"
-                  >
-                   Sign up
-                  </a>
-                </div>
+                  Logout
+                </button>
               </div>
 
               <div className="block md:hidden">

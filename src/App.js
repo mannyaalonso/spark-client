@@ -9,6 +9,7 @@ export default function App() {
   const checkToken = async () => {
     const user = await checkSession()
     if (user === "User not authenticated") return
+    console.log("USER", user.data)
     setUser(user.data)
   }
 

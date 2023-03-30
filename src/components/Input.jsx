@@ -37,12 +37,13 @@ const Input = ({
           <input
             className="w-96 rounded-lg border-gray-200 p-3 text-sm"
             placeholder={field}
-            type="text"
+            type={title === "Age" ? "number" : "text"}
             name={title}
             onChange={textChange}
             value={input}
           />
         </div>
+        {title !== "Age" && 
         <div className="relative h-8 flex items-center -mt-4 mb-4">
           <label
             htmlFor={title}
@@ -61,7 +62,7 @@ const Input = ({
           <h1 className="ml-20 text-left">
             {checked ? "Visible on your profile" : "Hidden on your profile"}
           </h1>
-        </div>
+        </div>}
       </div>
     </div>
   )
