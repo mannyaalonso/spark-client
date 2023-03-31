@@ -1,6 +1,6 @@
 import { Virtues, Vitals, Vices, Nav, Pictures } from "../components"
 
-const Profile = ({ user, setUser, handleChange, handleUpload, file, percent, imageArray }) => {
+const Profile = ({ user, setUser, handleChange, handleUpload, file, percent, imageArray, status }) => {
   return (
     <>
       <Nav user={user} />
@@ -13,6 +13,7 @@ const Profile = ({ user, setUser, handleChange, handleUpload, file, percent, ima
         file={file}
         percent={percent}
         imageArray={imageArray}
+        status={status}
       />
       <Virtues user={user} setUser={setUser} />
       <Vices user={user} setUser={setUser} />

@@ -11,26 +11,8 @@ const Pictures = ({
   file,
   percent,
   imageArray,
+  status
 }) => {
-  const [status, setStatus] = useState("")
-
-  const handleUpdate = async () => {
-    checkUndefined()
-    const res = await updateUser({images: imageArray}, user._id)
-    if (res.status === 200) {
-      setStatus("Your pictures were updated.")
-      return setUser(res.data[0])
-    }
-    setStatus("Please try again, there was an error.")
-  }
-
-  const checkUndefined = () => {
-    for (let i = 0; i < user.images.length; i++) {
-      if (user.images[i] !== undefined && imageArray[i] === undefined) {
-        imageArray[i] = user.images[i]
-      }
-    }
-  }
 
   return (
     user && (
@@ -41,9 +23,10 @@ const Pictures = ({
               <div className="mt-8">
                 <p className="text-2xl font-bold text-teal-600">Pictures</p>
                 <address className="mt-2 not-italic">
-                  A collection of personal and professional details that provide
-                  a brief overview of an individual's identity, skills,
-                  experience, interests, and background.
+                  Your photos are probably feeling a bit lonely in the dark
+                  abyss of your storage. Why not show them some love and
+                  upload them so they can frolic with other
+                  digital delights?
                 </address>
               </div>
             </div>
@@ -53,17 +36,15 @@ const Pictures = ({
                   imageArray={imageArray}
                   handleChange={handleChange}
                   images={user.images}
+                  percent={percent}
                 />
                 <div className="mt-4 flex gap-4 items-center">
-                  <button
-                    onClick={handleUpdate}
-                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                  >
-                    Update
-                  </button>
-                  <h1>{percent}%</h1>
+                  {percent !== 0 && percent !== 100 && (
+                    <h1 className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                      {percent}%
+                    </h1>
+                  )}
                 </div>
-                {file ? <h1>Press update to upload your picture</h1> : <h1>No file chosen</h1>}
                 <h1
                   className={
                     status === "Your pictures were updated."
