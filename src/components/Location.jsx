@@ -2,19 +2,15 @@ import { useState, useEffect } from "react"
 
 const Location = ({
   title,
-  field,
   visibility,
-  variables,
-  setStatus,
-  setBody,
-  body,
+  setLocation,
+  location,
 }) => {
-  const [location, setLocation] = useState("")
 
   const handleLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
-      setBody({
-        ...body,
+      setLocation({
+        ...location,
         location_visibility: true,
         location: [position.coords.longitude, position.coords.latitude],
       })
@@ -33,7 +29,7 @@ const Location = ({
         <div className="flex flex-row">
           <h1
             className={`w-44 rounded-lg border-gray-200 p-3 text-sm ${
-              visibility ? "text-green-600" : "text-red-600"
+              visibility ? "text-green-500" : "text-red-600"
             }`}
           >
             {visibility ? "Location Enabled" : "Location Disabled"}

@@ -6,7 +6,7 @@ const Nav = ({ user }) => {
     {id: 0, name: "Home", link: "/"},
     {id: 1, name: "Sparks", link: "/"},
     {id: 2, name: "Cupid", link: "/"},
-    {id: 3, name: "Profile", link: "/"},
+    {id: 3, name: "Profile", link: "/profile"},
     {id: 4, name: "Preferences", link: "/preferences"},
   ]
 

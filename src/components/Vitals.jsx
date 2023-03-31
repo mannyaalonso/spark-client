@@ -6,9 +6,7 @@ import Location from "./Location"
 const Vitals = ({ user, setUser }) => {
   const initialState = {
     first_name: user?.vitals?.first_name,
-    name_visibility: user?.vitals?.name_visibility,
     age: user?.vitals?.age,
-    age_visibility: user?.vitals?.age_visibility,
   }
 
   const initialLocation = {
@@ -22,7 +20,14 @@ const Vitals = ({ user, setUser }) => {
 
   const handleUpdate = async () => {
     checkUndefined()
-    const res = await updateUser({ vitals: body }, user._id)
+    const res = await updateUser(
+      {
+        location: { coordinates: location.location, type: "Point" },
+        location_visibility: location.location_visibility,
+        vitals: body,
+      },
+      user._id
+    )
     if (res.status === 200) {
       setStatus("Your vitals were updated.")
       return setUser(res.data[0])
@@ -33,17 +38,11 @@ const Vitals = ({ user, setUser }) => {
   const checkUndefined = () => {
     if (body.first_name === undefined)
       body.first_name = user?.vitals?.first_name
-    if (body.name_visibility === undefined)
-      body.name_visibility = user?.vitals?.name_visibility
     if (body.age === undefined) body.age = user?.vitals?.age
-    if (body.age_visibility === undefined)
-      body.age_visibility = user?.vitals?.age_visibility
-    if (initialLocation.location === undefined) initialLocation.location = user?.location
-    if (initialLocation.location_visibility === undefined)
-      initialLocation.location_visibility = user?.location_visibility
+    if (location.location === undefined) location.location = user?.location.coordinates
+    if (location.location_visibility === undefined)
+      location.location_visibility = user?.location_visibility
   }
-
-  console.log("BODY", user)
 
   return (
     user && (
@@ -66,29 +65,26 @@ const Vitals = ({ user, setUser }) => {
                 <Input
                   title={"First Name"}
                   field={user?.vitals?.first_name}
-                  visibility={user?.vitals?.name_visibility}
-                  variables={["first_name", "name_visibility"]}
+                  variables={["first_name", ""]}
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
                 />
                 <Input
-                  title={"Age"}
+                  title={"Age (You can only update this once)"}
                   field={user?.vitals?.age}
-                  visibility={user?.vitals?.age_visibility}
-                  variables={["age", "age_visibility"]}
+                  variables={["age", ""]}
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
                 />
                 <Location
                   title={"Location"}
-                  field={user?.vitals?.location}
-                  visibility={user?.vitals?.location_visibility}
+                  field={user?.location}
+                  visibility={user?.location_visibility}
                   variables={["location", "location_visibility"]}
-                  setStatus={setStatus}
-                  setBody={setBody}
-                  body={body}
+                  setLocation={setLocation}
+                  location={location}
                 />
                 <div className="mt-4">
                   <button

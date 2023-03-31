@@ -6,7 +6,8 @@ import Welcome from "./Welcome"
 import SignUp from "./SignUp"
 import SignIn from "./SignIn"
 import Home from "./Home"
+import Profile from "./Profile"
 
 export {
-  SignUp, SignIn, Welcome, Home, Virtues, Vitals, Vices, Preferences
+  SignUp, SignIn, Welcome, Home, Virtues, Vitals, Vices, Preferences, Profile
 }
