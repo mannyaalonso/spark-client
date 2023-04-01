@@ -32,7 +32,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 0)}
         />
-        {images?.length >= 1 ? (
+        {images?.length >= 1 && images[0] !== null ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[0]}
@@ -53,7 +53,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 1)}
         />
-        {images?.length >= 2 ? (
+        {images?.length >= 2 && images[1] !== null ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[1]}
@@ -74,7 +74,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 2)}
         />
-        {images?.length >= 3 ? (
+        {(images?.length >= 3 && images[2] !== null) ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[2]}
@@ -95,7 +95,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 3)}
         />
-        {images?.length >= 4 ? (
+        {(images?.length >= 4 && images[3] !== null) ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[3]}
@@ -116,7 +116,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 4)}
         />
-        {images?.length >= 5 ? (
+        {(images?.length >= 5 && images[4] !== null) ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[4]}
@@ -137,7 +137,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           type="file"
           onChange={(e) => handleChange(e, 5)}
         />
-        {images?.length >= 6 ? (
+        {(images?.length >= 6 && images[5] !== null) ? (
           <img
             className="w-full h-full object-cover rounded-lg"
             src={images[5]}

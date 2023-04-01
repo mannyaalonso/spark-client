@@ -103,12 +103,8 @@ export default function App() {
         />
         <Route
           path="/preferences"
-          element={<Preferences user={user} setUser={setUser} />}
-        />
-        <Route
-          path="/profile"
           element={
-            <Profile
+            <Preferences
               user={user}
               setUser={setUser}
               handleChange={handleChange}
@@ -120,6 +116,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/profile" element={ <Profile />} />
       </Routes>
     </div>
   )

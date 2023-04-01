@@ -8,6 +8,7 @@ const Input = ({
   setStatus,
   setBody,
   body,
+  update
 }) => {
   const [checked, setChecked] = useState(visibility)
   const [input, setInput] = useState(field)
@@ -30,7 +31,7 @@ const Input = ({
         htmlFor={title}
         className="block text-sm font-medium text-gray-700 mb-2"
       >
-        {title}
+        {title !== "1" && title !== "2" && title !== "3" && title}
       </label>
       <div className="flex flex-col gap-8 ">
         <div>
@@ -41,29 +42,31 @@ const Input = ({
             name={title}
             onChange={textChange}
             value={input}
+            disabled={update === 0 ? false : true}
           />
         </div>
-        {(title !== "Age (You can only update this once)" && title !== "First Name") && (
-          <div className="relative h-8 flex items-center -mt-4 mb-4">
-            <label
-              htmlFor={title}
-              className="absolute h-8 w-14 cursor-pointer left-0 bottom-0 "
-            >
-              <input
-                type="checkbox"
-                id={title}
-                className="peer sr-only"
-                checked={checked}
-                onChange={checkChange}
-              />
-              <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-blue-500"></span>
-              <span className="absolute inset-0 m-1 h-6 w-6 rounded-full bg-white transition peer-checked:translate-x-6"></span>
-            </label>
-            <h1 className="ml-20 text-left">
-              {checked ? "Visible on your profile" : "Hidden on your profile"}
-            </h1>
-          </div>
-        )}
+        {title !== "Age (You can only update this once)" &&
+          title !== "First Name" && (
+            <div className="relative h-8 flex items-center -mt-4 mb-4">
+              <label
+                htmlFor={title}
+                className="absolute h-8 w-14 cursor-pointer left-0 bottom-0 "
+              >
+                <input
+                  type="checkbox"
+                  id={title}
+                  className="peer sr-only"
+                  checked={checked}
+                  onChange={checkChange}
+                />
+                <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-blue-500"></span>
+                <span className="absolute inset-0 m-1 h-6 w-6 rounded-full bg-white transition peer-checked:translate-x-6"></span>
+              </label>
+              <h1 className="ml-20 text-left">
+                {checked ? "Visible on your profile" : "Hidden on your profile"}
+              </h1>
+            </div>
+          )}
       </div>
     </div>
   )

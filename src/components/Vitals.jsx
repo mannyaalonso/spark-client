@@ -7,6 +7,7 @@ const Vitals = ({ user, setUser }) => {
   const initialState = {
     first_name: user?.vitals?.first_name,
     age: user?.vitals?.age,
+    age_update: user?.vitals?.age_update ? user?.vitals?.age_update : 0
   }
 
   const initialLocation = {
@@ -39,6 +40,7 @@ const Vitals = ({ user, setUser }) => {
     if (body.first_name === undefined)
       body.first_name = user?.vitals?.first_name
     if (body.age === undefined) body.age = user?.vitals?.age
+    if (body.age_update === 0) body.age_update = 1
     if (location.location === undefined) location.location = user?.location.coordinates
     if (location.location_visibility === undefined)
       location.location_visibility = user?.location_visibility
@@ -65,6 +67,7 @@ const Vitals = ({ user, setUser }) => {
                 <Input
                   title={"First Name"}
                   field={user?.vitals?.first_name}
+                  update={0}
                   variables={["first_name", ""]}
                   setStatus={setStatus}
                   setBody={setBody}
@@ -73,6 +76,7 @@ const Vitals = ({ user, setUser }) => {
                 <Input
                   title={"Age (You can only update this once)"}
                   field={user?.vitals?.age}
+                  update={user?.vitals?.age_update}
                   variables={["age", ""]}
                   setStatus={setStatus}
                   setBody={setBody}

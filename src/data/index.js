@@ -105,3 +105,22 @@ export const vitals = {
     "Prefer not to say",
   ],
 }
+
+export const prompts = {
+  about: [
+    { id: 1, title: "Unusual skills" },
+    { id: 2, title: "Dating me is like" },
+    { id: 3, title: "I go crazy for" },
+    { id: 4, title: "This year, I really want to" },
+    { id: 5, title: "A random fact I love is" },
+    { id: 6, title: "The way to win me over is" },
+    { id: 7, title: "My greatest strength" },
+    { id: 8, title: "Typical Sunday" },
+    { id: 9, title: "I recently discovered" },
+    { id: 10, title: "I recently discovered" },
+    { id: 12, title: "A life goal of mine" },
+    { id: 13, title: "I'm convinced that" },
+    { id: 14, title: "My simple pleasures" },
+    { id: 15, title: "My most irrational fear" },
+  ],
+}

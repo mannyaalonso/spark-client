@@ -5,9 +5,8 @@ const Nav = ({ user }) => {
   const navigation = [
     {id: 0, name: "Home", link: "/"},
     {id: 1, name: "Sparks", link: "/"},
-    {id: 2, name: "Cupid", link: "/"},
-    {id: 3, name: "Profile", link: "/profile"},
-    {id: 4, name: "Preferences", link: "/preferences"},
+    {id: 2, name: "Profile", link: "/profile"},
+    {id: 3, name: "Preferences", link: "/preferences"},
   ]
 
   const handleLogout = () => {

@@ -66,6 +66,7 @@ const Vices = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
+                  update={0}
                 />
                 <Input
                   title={"Smoking"}
@@ -75,6 +76,7 @@ const Vices = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
+                  update={0}
                 />
                 <Input
                   title={"Marijuana"}
@@ -84,6 +86,7 @@ const Vices = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
+                  update={0}
                 />
                 <Input
                   title={"Drugs"}
@@ -93,6 +96,7 @@ const Vices = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
+                  update={0}
                 />
                 <div className="mt-4">
                   <button

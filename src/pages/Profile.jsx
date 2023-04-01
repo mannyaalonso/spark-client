@@ -4,19 +4,7 @@ const Profile = ({ user, setUser, handleChange, handleUpload, file, percent, ima
   return (
     <>
       <Nav user={user} />
-      <Vitals user={user} setUser={setUser} />
-      <Pictures
-        user={user}
-        setUser={setUser}
-        handleChange={handleChange}
-        handleUpload={handleUpload}
-        file={file}
-        percent={percent}
-        imageArray={imageArray}
-        status={status}
-      />
-      <Virtues user={user} setUser={setUser} />
-      <Vices user={user} setUser={setUser} />
+      
     </>
   )
 }
