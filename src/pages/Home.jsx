@@ -1,9 +1,20 @@
 import { Nav, ProfileCard } from "../components"
 import { useEffect, useState } from "react"
 import { getUsers } from "../services/user"
+import CloseIcon from "@mui/icons-material/Close"
+import ReactPaginate from "react-paginate"
 
 const Home = ({ user }) => {
-  const [users, setUser] = useState([])
+  const [data, setUser] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const PER_PAGE = 1
+  const offset = currentPage * PER_PAGE
+  const currentPageData = data
+    .slice(offset, offset + PER_PAGE)
+    .map((user) => (
+      <ProfileCard key={user.properties.id} user={user.properties} />
+    ))
+  const pageCount = Math.ceil(data.length / PER_PAGE)
 
   const getUsersByLocation = async () => {
     const res = await getUsers(
@@ -14,19 +25,39 @@ const Home = ({ user }) => {
     setUser(res.data.features)
   }
 
+  function handlePageClick({ selected: selectedPage }) {
+    setCurrentPage(selectedPage)
+  }
+
   useEffect(() => {
     getUsersByLocation()
   }, [])
 
-  return users && (
-    <>
-      <Nav />
-      <div className="h-full w-full flex justify-center items-center flex-col gap-4">
-        {users.map((user) => (
-          <ProfileCard key={user.properties.id} user={user.properties} />
-        ))}
-      </div>
-    </>
+  return (
+    data && (
+      <>
+        <Nav />
+        <div className="h-full">
+          <div className="h-full w-full flex justify-center items-center flex-col gap-4 fixed">
+            {currentPageData}
+          </div>
+          <div className="bg-blue-400 ml-4 mb-4">
+            <ReactPaginate
+              previousLabel={""}
+              nextLabel={"→"}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              previousLinkClassName={"pagination__link"}
+              nextLinkClassName={"pagination__link"}
+              previousClassName={"previousClassName"}
+              disabledClassName={"pagination__link--disabled"}
+              activeClassName={"pagination__link--active"}
+            />
+          </div>
+        </div>
+      </>
+    )
   )
 }
 

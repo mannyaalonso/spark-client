@@ -58,7 +58,7 @@ const SummaryCard = ({
       <div className="flex justify-center">
         <section className="w-[22rem] md:w-[30rem] rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-[length:400%_400%] p-0.5 shadow-none transition [animation-duration:_6s] hover:shadow-lg">
           <div className="rounded-[10px] bg-white p-4  sm:p-6">
-            <div className="flex flex-row items-center mb-4 overflow-scroll">
+            <div className="flex flex-row items-center mb-4 overflow-scroll scrollbar-hide">
               <div className="flex flex-row items-center gap-2">
                 <CakeIcon />
                 <h1 className="mr-4">{age}</h1>
