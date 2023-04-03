@@ -67,7 +67,7 @@ const Virtues = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <Input
                   title={"Job Title"}
@@ -77,7 +77,7 @@ const Virtues = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <Input
                   title={"School"}
@@ -87,7 +87,7 @@ const Virtues = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <Input
                   title={"Home town"}
@@ -97,7 +97,7 @@ const Virtues = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <div className="mt-4">
                   <button

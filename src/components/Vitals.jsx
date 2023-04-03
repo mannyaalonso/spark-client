@@ -67,7 +67,7 @@ const Vitals = ({ user, setUser }) => {
                 <Input
                   title={"First Name"}
                   field={user?.vitals?.first_name}
-                  update={0}
+                  update={undefined}
                   variables={["first_name", ""]}
                   setStatus={setStatus}
                   setBody={setBody}
@@ -76,7 +76,7 @@ const Vitals = ({ user, setUser }) => {
                 <Input
                   title={"Age (You can only update this once)"}
                   field={user?.vitals?.age}
-                  update={user?.vitals?.age_update}
+                  update={user?.vitals}
                   variables={["age", ""]}
                   setStatus={setStatus}
                   setBody={setBody}

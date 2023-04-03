@@ -42,7 +42,7 @@ const Input = ({
             name={title}
             onChange={textChange}
             value={input}
-            disabled={update === 0 ? false : true}
+            disabled={update === undefined ? false : true}
           />
         </div>
         {title !== "Age (You can only update this once)" &&

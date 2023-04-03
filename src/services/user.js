@@ -57,7 +57,7 @@ export const updateUser = async (body, id) => {
 export const getUsers = async (lat, long) => {
   try {
     const res = await Client.get(
-      `http://127.0.0.1:8888/users/location?lat=${lat}&long=${long}&distance=5000`
+      `http://127.0.0.1:8888/users/location?lat=${lat}&long=${long}&distance=100000`
     )
     return res
   } catch (e) {

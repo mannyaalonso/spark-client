@@ -50,8 +50,8 @@ const Prompts = ({ user, setUser }) => {
               <div className="mt-8">
                 <p className="text-2xl font-bold text-teal-600">Prompts</p>
                 <address className="mt-2 not-italic">
-                  Get creative and find you the love of your life (or at
-                  least a really good first date)!
+                  Get creative and find you the love of your life (or at least a
+                  really good first date)!
                 </address>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Prompts = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <Dropdown
                   title="Prompt #2"
@@ -90,7 +90,7 @@ const Prompts = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <Dropdown
                   title="Prompt #3"
@@ -107,7 +107,7 @@ const Prompts = ({ user, setUser }) => {
                   setStatus={setStatus}
                   setBody={setBody}
                   body={body}
-                  update={0}
+                  update={undefined}
                 />
                 <div className="mt-4">
                   <button

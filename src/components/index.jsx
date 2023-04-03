@@ -13,6 +13,7 @@ import ImageCard from "./ImageCard"
 import IntroCard from "./IntroCard"
 import SummaryCard from "./SummaryCard"
 import LikeButton from "./LikeButton"
+import ProfileCard from "./ProfileCard"
 
 export {
   Input,
@@ -30,4 +31,5 @@ export {
   IntroCard,
   SummaryCard,
   LikeButton,
+  ProfileCard
 }
