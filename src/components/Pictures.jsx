@@ -23,10 +23,7 @@ const Pictures = ({
               <div className="mt-8">
                 <p className="text-2xl font-bold text-teal-600">Pictures</p>
                 <address className="mt-2 not-italic">
-                  Your photos are probably feeling a bit lonely in the dark
-                  abyss of your storage. Why not show them some love and
-                  upload them so they can frolic with other
-                  digital delights?
+                  "Your photos are probably feeling a bit lonely in the dark abyss of your phone's storage. Why not show them some love and upload them to the cloud, where they can frolic with other digital delights?"
                 </address>
               </div>
             </div>
@@ -39,11 +36,8 @@ const Pictures = ({
                   percent={percent}
                 />
                 <div className="mt-4 flex gap-4 items-center">
-                  {percent !== 0 && percent !== 100 && (
-                    <h1 className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
-                      {percent}%
-                    </h1>
-                  )}
+                  {percent !== 0 && percent !== 100 && 
+                  <h1 className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">{percent}%</h1>}
                 </div>
                 <h1
                   className={

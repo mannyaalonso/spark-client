@@ -105,7 +105,7 @@ const Uploader = ({ images, handleChange, percent }) => {
           <h1>No Image</h1>
         )}
       </div>
-      <div
+      {/* <div
         onClick={() => handleClick(5)}
         className="w-40 h-40 bg-slate-600 rounded-lg flex justify-center items-center text-white"
       >
@@ -146,7 +146,7 @@ const Uploader = ({ images, handleChange, percent }) => {
         ) : (
           <h1>No Image</h1>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -50,9 +50,8 @@ const Prompts = ({ user, setUser }) => {
               <div className="mt-8">
                 <p className="text-2xl font-bold text-teal-600">Prompts</p>
                 <address className="mt-2 not-italic">
-                  A collection of personal and professional details that provide
-                  a brief overview of an individual's identity, skills,
-                  experience, interests, and background.
+                  Get creative and find you the love of your life (or at
+                  least a really good first date)!
                 </address>
               </div>
             </div>

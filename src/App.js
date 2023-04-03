@@ -116,7 +116,7 @@ export default function App() {
             />
           }
         />
-        <Route path="/profile" element={ <Profile />} />
+        <Route path="/profile" element={ <Profile user={user}/>} />
       </Routes>
     </div>
   )

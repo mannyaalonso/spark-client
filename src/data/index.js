@@ -118,9 +118,9 @@ export const prompts = {
     { id: 8, title: "Typical Sunday" },
     { id: 9, title: "I recently discovered" },
     { id: 10, title: "I recently discovered" },
-    { id: 12, title: "A life goal of mine" },
-    { id: 13, title: "I'm convinced that" },
-    { id: 14, title: "My simple pleasures" },
-    { id: 15, title: "My most irrational fear" },
+    { id: 11, title: "A life goal of mine" },
+    { id: 12, title: "I'm convinced that" },
+    { id: 13, title: "My simple pleasures" },
+    { id: 14, title: "My most irrational fear" },
   ],
 }

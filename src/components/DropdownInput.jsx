@@ -11,14 +11,11 @@ const DropDownInput = ({ field, variable, body, setBody }) => {
       {field ? <h1>{field}</h1> : <h1>{body[variable]}</h1>}
       <Dropdown className="bg-transparent" label={body[variable]}>
         {prompts.about.map((item) => (
-          <>
-            <Dropdown.Item
-              key={item.id}
-              onClick={() => handleClick(item.title)}
-            >
+          <div key={item.id}>
+            <Dropdown.Item onClick={() => handleClick(item.title)}>
               {item.title}
             </Dropdown.Item>
-          </>
+          </div>
         ))}
       </Dropdown>
     </div>
