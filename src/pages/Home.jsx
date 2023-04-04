@@ -4,8 +4,8 @@ import { getUsers } from "../services/user"
 import CloseIcon from "@mui/icons-material/Close"
 import ReactPaginate from "react-paginate"
 
-const Home = ({ user }) => {
-  const [data, setUser] = useState([])
+const Home = ({ setUser, user }) => {
+  const [data, setData] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
   const PER_PAGE = 1
   const offset = currentPage * PER_PAGE
@@ -22,7 +22,7 @@ const Home = ({ user }) => {
       user?.location?.coordinates[0]
     )
     console.log("RES", res)
-    setUser(res.data.features)
+    setData(res.data.features)
   }
 
   function handlePageClick({ selected: selectedPage }) {
@@ -33,10 +33,10 @@ const Home = ({ user }) => {
     getUsersByLocation()
   }, [])
 
-  return (
+  return user && (
     data && (
       <>
-        <Nav />
+        <Nav setUser={setUser} />
         <div className="h-full mt-16">
           <div className="h-full w-full flex justify-center items-center flex-col gap-4 fixed">
             {currentPageData}

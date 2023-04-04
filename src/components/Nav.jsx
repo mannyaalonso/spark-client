@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-const Nav = ({ user }) => {
+const Nav = ({ setUser, user }) => {
+
+  const navigate = useNavigate()
 
   const navigation = [
     {id: 0, name: "Home", link: "/"},
@@ -10,7 +13,9 @@ const Nav = ({ user }) => {
   ]
 
   const handleLogout = () => {
-
+    localStorage.clear()
+    setUser(null)
+    navigate("/signin")
   }
   
   return (

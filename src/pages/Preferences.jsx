@@ -12,7 +12,7 @@ const Preferences = ({
 }) => {
   return (
     <>
-      <Nav user={user} />
+      <Nav setUser={setUser} user={user} />
       <Vitals user={user} setUser={setUser} />
       <Pictures
         user={user}

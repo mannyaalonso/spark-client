@@ -95,11 +95,16 @@ export default function App() {
     <div className="App">
       <Routes>
         {!user && <Route path="/" element={<Welcome />} />}
-        {user && <Route path="/" element={<Home user={user} />} />}
-        <Route path="/signup" element={<SignUp user={user} />} />
+        {user && (
+          <Route path="/" element={<Home setUser={setUser} user={user} />} />
+        )}
+        <Route
+          path="/signup"
+          element={<SignUp setUser={setUser} user={user} />}
+        />
         <Route
           path="/signin"
-          element={<SignIn user={user} setUser={setUser} />}
+          element={<SignIn setUser={setUser} user={user} />}
         />
         <Route
           path="/preferences"
@@ -116,7 +121,10 @@ export default function App() {
             />
           }
         />
-        <Route path="/profile" element={ <Profile user={user}/>} />
+        <Route
+          path="/profile"
+          element={<Profile setUser={setUser} user={user} />}
+        />
       </Routes>
     </div>
   )
