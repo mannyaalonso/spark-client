@@ -94,7 +94,9 @@ export default function App() {
   return (
     <div className="App">
       <Routes>
-        {!user && <Route path="/" element={<Welcome />} />}
+        {!user && (
+          <Route path="/" element={<SignUp setUser={setUser} user={user} />} />
+        )}
         {user && (
           <Route path="/" element={<Home setUser={setUser} user={user} />} />
         )}

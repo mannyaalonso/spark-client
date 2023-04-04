@@ -22,7 +22,7 @@ const Home = ({ setUser, user }) => {
       user?.location?.coordinates[0]
     )
     console.log("RES", res)
-    setData(res.data.features)
+    if (res !== undefined) setData(res.data.features)
   }
 
   function handlePageClick({ selected: selectedPage }) {
@@ -33,10 +33,10 @@ const Home = ({ setUser, user }) => {
     getUsersByLocation()
   }, [])
 
-  return user && (
-    data && (
-      <>
-        <Nav setUser={setUser} />
+  return (
+    <>
+      <Nav setUser={setUser} />
+      {data && user?.vitals && (
         <div className="h-full mt-16">
           <div className="h-full w-full flex justify-center items-center flex-col gap-4 fixed">
             {currentPageData}
@@ -56,8 +56,8 @@ const Home = ({ setUser, user }) => {
             />
           </div>
         </div>
-      </>
-    )
+      )}
+    </>
   )
 }
 

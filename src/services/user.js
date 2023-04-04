@@ -60,6 +60,7 @@ export const updateUser = async (body, id) => {
 }
 
 export const getUsers = async (lat, long) => {
+  if (lat === undefined || long === undefined) return
   try {
     const res = await Client.get(
       `http://127.0.0.1:5000/users/location?lat=${lat}&long=${long}&distance=100000`
