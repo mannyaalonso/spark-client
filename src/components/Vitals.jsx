@@ -97,6 +97,12 @@ const Vitals = ({ user, setUser }) => {
                   >
                     Update
                   </button>
+                  <button
+                    onClick={handleDelete}
+                    className="inline-block w-full rounded-lg bg-red-700 px-5 py-3 font-medium text-white sm:w-auto ml-4"
+                  >
+                    Delete Account
+                  </button>
                   <h1
                     className={
                       status === "Your vitals were updated."

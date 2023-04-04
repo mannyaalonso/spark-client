@@ -21,7 +21,6 @@ const Home = ({ setUser, user }) => {
       user?.location?.coordinates[1],
       user?.location?.coordinates[0]
     )
-    console.log("RES", res)
     if (res !== undefined) setData(res.data.features)
   }
 
