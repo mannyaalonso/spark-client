@@ -1,5 +1,5 @@
 import Input from "./Input"
-import { updateUser } from "../services"
+import { updateUser, deleteUser } from "../services"
 import { useState } from "react"
 import Location from "./Location"
 import { useNavigate } from "react-router-dom"

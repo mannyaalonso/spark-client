@@ -67,3 +67,11 @@ export const getUsers = async (lat, long) => {
     return e.response
   }
 }
+
+export const deleteUser = async (id) => {
+  try {
+     await Client.delete(`${BASE_URL}/users/${id.$oid}`)
+  } catch (e) {
+    return e.response
+  }
+}
