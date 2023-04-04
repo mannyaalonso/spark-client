@@ -9,7 +9,7 @@ export default function App() {
   const [user, setUser] = useState(null)
   const [percent, setPercent] = useState(0)
   const [imageArray, setImageUrl] = useState([])
-    const [status, setStatus] = useState("")
+  const [status, setStatus] = useState("")
   let file = ""
 
   const checkToken = async () => {
