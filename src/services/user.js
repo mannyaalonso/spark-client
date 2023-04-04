@@ -1,12 +1,12 @@
 import Client from "./api"
 import axios from "axios"
 
-export const BASE_URL = "http://127.0.0.1:8000"
+export const BASE_URL = "http://127.0.0.1:5000"
 
 export const createUser = async (email, password) => {
   try {
     const { data } = await axios.post(
-      "http://127.0.0.1:8000/signup",
+      "http://127.0.0.1:5000/signup",
       {
         email: email,
         password: password,
@@ -27,7 +27,7 @@ export const createUser = async (email, password) => {
 export const loginUser = async (email, password) => {
   try {
     const { data } = await axios.post(
-      "http://127.0.0.1:8000/signin",
+      "http://127.0.0.1:5000/signin",
       {
         email: email,
         password: password,
@@ -50,7 +50,7 @@ export const loginUser = async (email, password) => {
 export const updateUser = async (body, id) => {
   try {
     const res = await Client.put(
-      `http://127.0.0.1:8000/users/${id.$oid}`,
+      `http://127.0.0.1:5000/users/${id.$oid}`,
       body
     )
     return res
@@ -62,7 +62,7 @@ export const updateUser = async (body, id) => {
 export const getUsers = async (lat, long) => {
   try {
     const res = await Client.get(
-      `http://127.0.0.1:8000/users/location?lat=${lat}&long=${long}&distance=100000`
+      `http://127.0.0.1:5000/users/location?lat=${lat}&long=${long}&distance=100000`
     )
     return res
   } catch (e) {
