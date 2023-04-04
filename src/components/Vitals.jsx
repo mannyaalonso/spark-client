@@ -62,7 +62,7 @@ const Vitals = ({ user, setUser }) => {
               </div>
             </div>
 
-            <div className="rounded-lg bg-red p-8 shadow-lg lg:col-span-3 lg:p-12 flex-row">
+            <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12 flex-row">
               <section className="space-y-4">
                 <Input
                   title={"First Name"}
