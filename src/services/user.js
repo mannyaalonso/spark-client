@@ -4,7 +4,7 @@ import axios from "axios"
 export const createUser = async (email, password) => {
   try {
     const { data } = await axios.post(
-      "http://127.0.0.1:8888/signup",
+      "https://spark-backend.herokuapp.com/signup",
       {
         email: email,
         password: password,
@@ -25,7 +25,7 @@ export const createUser = async (email, password) => {
 export const loginUser = async (email, password) => {
   try {
     const { data } = await axios.post(
-      "http://127.0.0.1:8888/signin",
+      "https://spark-backend.herokuapp.com/signin",
       {
         email: email,
         password: password,
@@ -57,7 +57,7 @@ export const updateUser = async (body, id) => {
 export const getUsers = async (lat, long) => {
   try {
     const res = await Client.get(
-      `http://127.0.0.1:8888/users/location?lat=${lat}&long=${long}&distance=100000`
+      `https://spark-backend.herokuapp.com/users/location?lat=${lat}&long=${long}&distance=100000`
     )
     return res
   } catch (e) {

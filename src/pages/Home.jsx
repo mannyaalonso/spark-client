@@ -37,7 +37,7 @@ const Home = ({ user }) => {
     data && (
       <>
         <Nav />
-        <div className="h-full">
+        <div className="h-full mt-16">
           <div className="h-full w-full flex justify-center items-center flex-col gap-4 fixed">
             {currentPageData}
           </div>
