@@ -2,6 +2,7 @@ import Input from "./Input"
 import { updateUser } from "../services"
 import { useState } from "react"
 import Location from "./Location"
+import { useNavigate } from "react-router-dom"
 
 const Vitals = ({ user, setUser }) => {
   const initialState = {
@@ -14,6 +15,8 @@ const Vitals = ({ user, setUser }) => {
     location: user?.location,
     location_visibility: user?.location_visibility,
   }
+
+  const navigate = useNavigate()
 
   const [body, setBody] = useState(initialState)
   const [location, setLocation] = useState(initialLocation)
@@ -34,6 +37,14 @@ const Vitals = ({ user, setUser }) => {
       return setUser(res.data[0])
     }
     setStatus("Please try again, there was an error.")
+  }
+
+  const handleDelete = async () => {
+    await deleteUser(user._id)
+    localStorage.clear()
+    setUser(null)
+    navigate("/")
+    
   }
 
   const checkUndefined = () => {
